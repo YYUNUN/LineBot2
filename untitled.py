@@ -13,7 +13,9 @@ app = Flask(__name__)
 from flask import request, abort
 from linebot import  LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
-from linebot.models import MessageEvent, TextMessage,TextSendMessage, ImageSendMessage, StickerSendMessage, LocationSendMessage, QuickReply, QuickReplyButton, MessageAction
+from linebot.models import MessageEvent, TextMessage, TextSendMessage, LocationSendMessage, TemplateSendMessage, MessageTemplateAction, URITemplateAction, CarouselTemplate, CarouselColumn, ImageCarouselTemplate, ImageCarouselColumn
+
+
 import os
 line_bot_api = LineBotApi(os.environ.get('Channel_Access_Token'))
 handler = WebhookHandler(os.environ.get('Channel_Secret'))
@@ -28,80 +30,103 @@ def callback():
         abort(400)
     return 'OK'
 
+
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     mtext = event.message.text
-    if mtext == '@按鈕樣板':
-        sendButton(event)
+    if mtext == '@轉盤樣板':
+        sendCarousel(event)
 
-    elif mtext == '@確認樣板':
-        sendConfirm(event)
+    elif mtext == '@圖片轉盤':
+        sendImgCarousel(event)
     
-    elif mtext == '@購買披薩':
-        sendPizza(event)
+    elif mtext == '@星巴克位置':
+        sendLocation(event)
 
-    elif mtext == '@yes':
-        sendYes(event)
-
-def sendButton(event):  #按鈕樣版
+def sendCarousel(event):  #轉盤樣板
     try:
         message = TemplateSendMessage(
-            alt_text='按鈕樣板',
-            template=ButtonsTemplate(
-                thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',  #顯示的圖片
-                title='按鈕樣版示範',  #主標題
-                text='請選擇：',  #副標題
-                actions=[
-                    MessageTemplateAction(  #顯示文字計息
-                        label='文字訊息',
-                        text='@購買披薩'
+            alt_text='轉盤樣板',
+            template=CarouselTemplate(
+                columns=[
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
+                        title='這是樣板一',
+                        text='第一個轉盤樣板',
+                        actions=[
+                            MessageTemplateAction(
+                                label='文字訊息一',
+                                text='我們有賣披薩'
+                            ),
+                            URITemplateAction(
+                                label='連結文淵閣網頁',
+                                uri='http://www.e-happy.com.tw'
+                            )
+                        ]
                     ),
-                    URITemplateAction(  #開啟網頁
-                        label='連結網頁',
-                        uri='http://www.e-happy.com.tw'
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/qaAdBkR.png',
+                        title='這是樣板二',
+                        text='第二個轉盤樣板',
+                        actions=[
+                            MessageTemplateAction(
+                                label='文字訊息二',
+                                text='我們有賣飲料'
+                            ),
+                            URITemplateAction(
+                                label='連結台大網頁',
+                                uri='http://www.ntu.edu.tw'
+                            )
+                        ]
                     )
                 ]
             )
         )
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token,message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-def sendConfirm(event):  #確認樣板
+def sendImgCarousel(event):  #圖片轉盤
     try:
         message = TemplateSendMessage(
-            alt_text='確認樣板',
-            template=ConfirmTemplate(
-                text='你確定要購買這項商品嗎？',
-                actions=[
-                    MessageTemplateAction(  #按鈕選項
-                        label='是',
-                        text='@yes'
+            alt_text='圖片轉盤樣板',
+            template=ImageCarouselTemplate(
+                columns=[
+                    ImageCarouselColumn(
+                        image_url='https://i.imgur.com/4QfKuz1.png',
+                        action=MessageTemplateAction(
+                            label='文字訊息',
+                            text='我們有賣披薩'
+                        )
                     ),
-                    MessageTemplateAction(
-                        label='否',
-                        text='@no'
+                    ImageCarouselColumn(
+                        image_url='https://i.imgur.com/qaAdBkR.png',
+                        action=URITemplateAction(
+                            label='連結星巴克',
+                            uri='https://www.starbucks.com.tw/home/index.jspx'
+                        )
+                    ),
+                    ImageCarouselColumn(
+                        image_url='https://i.imgur.com/Qg0rsSk.jpg',
+                        action=MessageTemplateAction(
+                            label='座標位置',
+                            text='@星巴克位置'
+                        )
                     )
                 ]
             )
         )
-        line_bot_api.reply_message(event.reply_token, message)
+        line_bot_api.reply_message(event.reply_token,message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-def sendPizza(event):
+def sendLocation(event):
     try:
-        message = TextSendMessage(
-            text = '感謝您購買披薩，我們將盡快為您製作。'
-        )
-        line_bot_api.reply_message(event.reply_token, message)
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
-
-def sendYes(event):
-    try:
-        message = TextSendMessage(
-            text='感謝您的購買，\n我們將盡快寄出商品。',
+        message = LocationSendMessage(
+            title='星巴克 景美門市', 
+            address='116台北市文山區景興路185號1-2F', 
+            latitude=24.99301856466003,
+            longitude=121.54439425767183
         )
         line_bot_api.reply_message(event.reply_token, message)
     except:
