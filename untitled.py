@@ -110,7 +110,7 @@ def sendCarousel(event):  #轉盤樣板 喝啥
                                 text='我們有賣披薩'
                             )
                         ]
-                    ),
+                    )
                 ]
             )
         )
