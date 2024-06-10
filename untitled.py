@@ -132,15 +132,18 @@ def sendCarousel(event):  #轉盤樣板
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-
-
+texts1 = ['必勝客', '拿波里', '肯德基', '麥當勞', 'ABV 美式餐酒館', 'AK12美式小館', 'H&W Restaurant and Bar', '發福廚房', '金色三麥', 'the Chips', '樂子 the Diner', 'Campus cafe', 'Housebistro好適廚坊']
+texts2 = ['頤宮', '興蓬萊台菜餐廳', '國賓中餐廳', '朧粵 Longyue', '捌伍添第 85TD', '喜來登', '私廚‧小酒棧', 'THE上海', '天香樓Tien Hsiang Lo', '今大滷肉飯', '吉甜不辣', '鑫鱻熱炒', '阿城鵝肉', '丰禾台式小館']
+texts3 = ['偷飯賊', 'GG季吉韓國美食餐飲房', 'WAYO 哇優', '東輝韓食館', '米食 미식', '韓食堂한식당', '大發韓式特色料理', 'Tigerroar 韓虎嘯', '小飯館兒', '林家匠韓國部隊鍋', '首爾飯桌 - 서울밥상', 'NiL Kitchen 尼歐廚房', 'K bab 大叔的飯卷', '米花停', '朝鮮味', '韓華園']
+texts4 = ['瓦城', '1010湘', '大心', '泰鑽泰式料理', '哈哈囉55泰式船面', 'Lisa泰式美食',  'Kanokwan 老麵攤', '泰街頭', '三攀泰泰國料理', '泰鼎泰式料理']
+texts5 = ['欣葉日本料理', 'NAGOMI', '彩日本料理', '金子半之助 ', '九州鬆餅', '日本橋海鮮丼つじ半',  '丼飯店', '心 KOKORO 食堂', '大和日本料理', '三井料理美術館']
+random_text1 = random.choice(texts1)
+random_text2 = random.choice(texts2)
+random_text1 = random.choice(texts3)
+random_text2 = random.choice(texts4)
+random_text2 = random.choice(texts5)
 
 def sendImgCarousel(event):  #圖片轉盤
-    random_text1 = random.choice(texts1)
-    random_text2 = random.choice(texts2)
-    random_text1 = random.choice(texts3)
-    random_text2 = random.choice(texts4)
-    random_text2 = random.choice(texts5)
     try:
         message = TemplateSendMessage(
             alt_text='圖片轉盤樣板',
