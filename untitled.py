@@ -141,6 +141,7 @@ def handle_postback(event):
                 preview_image_url='https://starslifestyle.com.tw/wp-content/uploads/20200607191949_51.jpg'
             )
         )
+        print('圖片消息已發送')
 
 def sendImgCarousel(event):  #圖片轉盤
     try:
