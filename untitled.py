@@ -138,11 +138,7 @@ texts3 = ['偷飯賊', 'GG季吉韓國美食餐飲房', 'WAYO 哇優', '東輝�
 texts4 = ['瓦城', '1010湘', '大心', '泰鑽泰式料理', '哈哈囉55泰式船面', 'Lisa泰式美食', 'Kanokwan 老麵攤', '泰街頭', '三攀泰泰國料理', '泰鼎泰式料理']
 texts5 = ['欣葉日本料理', 'NAGOMI', '彩日本料理', '金子半之助 ', '九州鬆餅', '日本橋海鮮丼つじ半', '丼飯店', '心 KOKORO 食堂', '大和日本料理', '三井料理美術館']
 
-a=1
-if(a==0):
-  random_text1 = random.choice(texts1)
-
-#random_text1 = random.choice(texts1)
+random_text1 = random.choice(texts1)
 random_text2 = random.choice(texts2)
 random_text3 = random.choice(texts3)
 random_text4 = random.choice(texts4)
@@ -159,8 +155,7 @@ def sendImgCarousel(event):  #圖片轉盤
                         action=MessageTemplateAction(
                             label='美式',
                             text= random_text1
-                        ),
-                        a=0
+                        )
                     ),
                     ImageCarouselColumn(
                         image_url='https://i.imgur.com/4QfKuz1.png',
