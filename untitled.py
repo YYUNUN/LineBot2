@@ -137,15 +137,17 @@ texts2 = ['頤宮', '興蓬萊台菜餐廳', '國賓中餐廳', '朧粵 Longyue'
 texts3 = ['偷飯賊', 'GG季吉韓國美食餐飲房', 'WAYO 哇優', '東輝韓食館', '米食 미식', '韓食堂한식당', '大發韓式特色料理', 'Tigerroar 韓虎嘯', '小飯館兒', '林家匠韓國部隊鍋', '首爾飯桌 - 서울밥상', 'NiL Kitchen 尼歐廚房', 'K bab 大叔的飯卷', '米花停', '朝鮮味', '韓華園']
 texts4 = ['瓦城', '1010湘', '大心', '泰鑽泰式料理', '哈哈囉55泰式船面', 'Lisa泰式美食', 'Kanokwan 老麵攤', '泰街頭', '三攀泰泰國料理', '泰鼎泰式料理']
 texts5 = ['欣葉日本料理', 'NAGOMI', '彩日本料理', '金子半之助 ', '九州鬆餅', '日本橋海鮮丼つじ半', '丼飯店', '心 KOKORO 食堂', '大和日本料理', '三井料理美術館']
-
+if(a==0):
+  random_text1 = random.choice(texts1)
+#random_text1 = random.choice(texts1)
+random_text2 = random.choice(texts2)
+random_text3 = random.choice(texts3)
+random_text4 = random.choice(texts4)
+random_text5 = random.choice(texts5)
 
 def sendImgCarousel(event):  #圖片轉盤
     try:
-        random_text1 = random.choice(texts1)
-        random_text2 = random.choice(texts2)
-        random_text1 = random.choice(texts3)
-        random_text2 = random.choice(texts4)
-        random_text2 = random.choice(texts5)
+       
         message = TemplateSendMessage(
             alt_text='圖片轉盤樣板',
             template=ImageCarouselTemplate(
@@ -156,6 +158,7 @@ def sendImgCarousel(event):  #圖片轉盤
                             label='美式',
                             text= random_text1
                         )
+                        a=0
                     ),
                     ImageCarouselColumn(
                         image_url='https://i.imgur.com/4QfKuz1.png',
