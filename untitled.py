@@ -16,10 +16,7 @@ from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage, LocationSendMessage, TemplateSendMessage, MessageTemplateAction, URITemplateAction, CarouselTemplate, CarouselColumn, ImageCarouselTemplate, ImageCarouselColumn
 from linebot.models import *
 from linebot.models import ImageSendMessage
-from linebot import LineBotApi, WebhookHandler
-from linebot.models import TemplateSendMessage, CarouselTemplate, CarouselColumn, PostbackTemplateAction, ImageSendMessage, PostbackEvent
-from linebot.exceptions import InvalidSignatureError
-from flask import Flask, request, abort
+
 
 import os
 line_bot_api = LineBotApi(os.environ.get('Channel_Access_Token'))
@@ -136,7 +133,7 @@ def sendCarousel(event):  #轉盤樣板
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-def handle_postback(event):
+def PostbackTemplateAction(event):
     print("Postback event received:", event)  # 添加日志查看事件
     postback_data = event.postback.data
     if postback_data == 'action=view_menu':
