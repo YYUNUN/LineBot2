@@ -50,13 +50,12 @@ def sendCarousel(event):  #轉盤樣板
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
+                        thumbnail_image_url='https://tcpass-static.taichung.gov.tw/storeFile/33558/33558_imageCover.png',
                         title='這是樣板一',
-                        text='第一個轉盤樣板',
                         actions=[
                             MessageTemplateAction(
                                 label='文字訊息一',
-                                text='我們有賣披薩'
+                               image_url = 'https://cdn.myfeel-tw.com/media/eA10hHiJL1prr2wRikZB2AM5vbANhsauz4dK7XCH.jpg'
                             ),
                             URITemplateAction(
                                 label='連結文淵閣網頁',
