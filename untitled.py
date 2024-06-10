@@ -34,7 +34,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     mtext = event.message.text
-    if mtext == '@轉盤樣板':
+    if mtext == '@今天要喝啥':
         sendCarousel(event)
 
     elif mtext == '@圖片轉盤':
@@ -51,11 +51,10 @@ def sendCarousel(event):  #轉盤樣板
                 columns=[
                     CarouselColumn(
                         thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
-                        title='這是樣板一',
-                        text='第一個轉盤樣板',
+                        title='五桐號',
                         actions=[
                             MessageTemplateAction(
-                                label='文字訊息一',
+                                label='菜單',
                                 text='我們有賣披薩'
                             ),
                             URITemplateAction(
@@ -66,11 +65,10 @@ def sendCarousel(event):  #轉盤樣板
                     ),
                     CarouselColumn(
                         thumbnail_image_url='https://i.imgur.com/qaAdBkR.png',
-                        title='這是樣板二',
-                        text='第二個轉盤樣板',
+                        title='COCO',
                         actions=[
                             MessageTemplateAction(
-                                label='文字訊息二',
+                                label='菜單',
                                 text='我們有賣飲料'
                             ),
                             URITemplateAction(
@@ -81,11 +79,10 @@ def sendCarousel(event):  #轉盤樣板
                     ),
                     CarouselColumn(
                         thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
-                        title='這是樣板一',
-                        text='第一個轉盤樣板',
+                        title='迷克夏',
                         actions=[
                             MessageTemplateAction(
-                                label='文字訊息一',
+                                label='菜單',
                                 text='我們有賣披薩'
                             ),
                             URITemplateAction(
@@ -96,11 +93,10 @@ def sendCarousel(event):  #轉盤樣板
                     ),
                     CarouselColumn(
                         thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
-                        title='這是樣板一',
-                        text='第一個轉盤樣板',
+                        title='清新福全',
                         actions=[
                             MessageTemplateAction(
-                                label='文字訊息一',
+                                label='菜單',
                                 text='我們有賣披薩'
                             ),
                             URITemplateAction(
@@ -111,11 +107,10 @@ def sendCarousel(event):  #轉盤樣板
                     ),
                     CarouselColumn(
                         thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
-                        title='這是樣板一',
-                        text='第一個轉盤樣板',
+                        title='先自然',
                         actions=[
                             MessageTemplateAction(
-                                label='文字訊息一',
+                                label='菜單',
                                 text='我們有賣披薩'
                             ),
                             URITemplateAction(
