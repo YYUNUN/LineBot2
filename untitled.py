@@ -139,6 +139,7 @@ texts4 = ['瓦城', '1010湘', '大心', '泰鑽泰式料理', '哈哈囉55泰�
 texts5 = ['欣葉日本料理', 'NAGOMI', '彩日本料理', '金子半之助 ', '九州鬆餅', '日本橋海鮮丼つじ半', '丼飯店', '心 KOKORO 食堂', '大和日本料理', '三井料理美術館']
 if(a==0):
   random_text1 = random.choice(texts1)
+    
 #random_text1 = random.choice(texts1)
 random_text2 = random.choice(texts2)
 random_text3 = random.choice(texts3)
