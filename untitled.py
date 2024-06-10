@@ -151,21 +151,21 @@ def sendImgCarousel(event):  #圖片轉盤
             template=ImageCarouselTemplate(
                 columns=[
                     ImageCarouselColumn(
-                        image_url='https://i.imgur.com/4QfKuz1.png',
+                        image_url='https://i.imgur.com/bUL1Bml.png',
                         action=MessageTemplateAction(
                             label='美式',
                             text= random_text1
                         )
                     ),
                     ImageCarouselColumn(
-                        image_url='https://i.imgur.com/4QfKuz1.png',
+                        image_url='https://i.imgur.com/3KaJYqm.png',
                         action=MessageTemplateAction(
                             label='中式',
                             text= random_text2
                         )
                     ),
                     ImageCarouselColumn(
-                        image_url='https://i.imgur.com/4QfKuz1.png',
+                        image_url='https://i.imgur.com/ZJ6yBHw.png',
                         action=MessageTemplateAction(
                             label='韓式',
                             text= random_text3
@@ -179,7 +179,7 @@ def sendImgCarousel(event):  #圖片轉盤
                         )
                     ),
                      ImageCarouselColumn(
-                        image_url='https://i.imgur.com/4QfKuz1.png',
+                        image_url='https://i.imgur.com/6G2QAPY.png',
                         action=MessageTemplateAction(
                             label='日式',
                             text= random_text5
