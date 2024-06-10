@@ -148,20 +148,20 @@ texts = [
 ]
 
 # 初始的 random_text1 值
-random_text1 = random.choice(texts[0])
+#random_text1 = random.choice(texts[0])
 
-def update_random_text1():
-    global random_text1
-    while True:
+#def update_random_text1():
+    #global random_text1
+    #while True:
         # 每五秒更新一次 random_text1 的值
-        time.sleep(5)
-        random_text1 = random.choice(texts[0])
-        print("random_text1 已更新为：", random_text1)
+        #time.sleep(5)
+       # random_text1 = random.choice(texts[0])
+       # print("random_text1 已更新为：", random_text1)
 
 # 创建一个线程来更新 random_text1 的值
-update_thread = threading.Thread(target=update_random_text1)
-update_thread.daemon = True
-update_thread.start()
+#update_thread = threading.Thread(target=update_random_text1)
+#update_thread.daemon = True
+#update_thread.start()
 
 def sendImgCarousel(event):  # 图片轮播
     try:
@@ -173,7 +173,7 @@ def sendImgCarousel(event):  # 图片轮播
                         image_url='https://i.imgur.com/bUL1Bml.png',
                         action=MessageTemplateAction(
                             label='美式',
-                            text=random_text1
+                            text=random.choice(texts[0])
                         )
                     ),
                     ImageCarouselColumn(
