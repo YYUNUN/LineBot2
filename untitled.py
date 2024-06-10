@@ -153,7 +153,7 @@ def sendImgCarousel(event):  #圖片轉盤
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
                             label='美式',
-                            text='美式'
+                            text=random_text1
                         )
                     ),
                     ImageCarouselColumn(
