@@ -50,12 +50,73 @@ def sendCarousel(event):  #轉盤樣板
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                       thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
+                        thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
                         title='這是樣板一',
+                        text='第一個轉盤樣板',
                         actions=[
                             MessageTemplateAction(
                                 label='文字訊息一',
+                                text='我們有賣披薩'
+                            ),
+                            URITemplateAction(
+                                label='連結文淵閣網頁',
+                                uri='http://www.e-happy.com.tw'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/qaAdBkR.png',
+                        title='這是樣板二',
+                        text='第二個轉盤樣板',
+                        actions=[
+                            MessageTemplateAction(
+                                label='文字訊息二',
                                 text='我們有賣飲料'
+                            ),
+                            URITemplateAction(
+                                label='連結台大網頁',
+                                uri='http://www.ntu.edu.tw'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
+                        title='這是樣板一',
+                        text='第一個轉盤樣板',
+                        actions=[
+                            MessageTemplateAction(
+                                label='文字訊息一',
+                                text='我們有賣披薩'
+                            ),
+                            URITemplateAction(
+                                label='連結文淵閣網頁',
+                                uri='http://www.e-happy.com.tw'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
+                        title='這是樣板一',
+                        text='第一個轉盤樣板',
+                        actions=[
+                            MessageTemplateAction(
+                                label='文字訊息一',
+                                text='我們有賣披薩'
+                            ),
+                            URITemplateAction(
+                                label='連結文淵閣網頁',
+                                uri='http://www.e-happy.com.tw'
+                            )
+                        ]
+                    ),
+                    CarouselColumn(
+                        thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
+                        title='這是樣板一',
+                        text='第一個轉盤樣板',
+                        actions=[
+                            MessageTemplateAction(
+                                label='文字訊息一',
+                                text='我們有賣披薩'
                             ),
                             URITemplateAction(
                                 label='連結文淵閣網頁',
