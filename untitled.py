@@ -34,7 +34,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     mtext = event.message.text
-    if mtext == '@今天要喝啥':
+    if mtext == '@轉盤樣板':
         sendCarousel(event)
 
     elif mtext == '@圖片轉盤':
