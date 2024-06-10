@@ -50,7 +50,7 @@ def sendCarousel(event):  #轉盤樣板
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://starslifestyle.com.tw/wp-content/uploads/20200607191949_51.jpg',
+                       thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
                         title='這是樣板一',
                         actions=[
                             MessageTemplateAction(
