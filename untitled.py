@@ -54,26 +54,26 @@ def sendCarousel(event):  #轉盤樣板
                     CarouselColumn(
                        thumbnail_image_url='https://tcpass-static.taichung.gov.tw/storeFile/33558/33558_imageCover.png',
                         title='五桐號',
-                        text='第一個轉盤樣板',
-                        actions=[
+                        text='',
+                       actions=[
+                            MessageTemplateAction(
+                                label='菜單',
+                                text='我要看五桐號菜單'
+                            ),
                             URITemplateAction(
                                 label='我的網頁',
                                 uri='https://www.wootea.com/'
-                            ),
-                            PostbackTemplateAction(
-                                label='查看菜單',
-                                data='action=view_menu'
                             )
                         ]
                     ),
                     CarouselColumn(
                         thumbnail_image_url='https://photo.518.com.tw/photo/2/77/3152921/1689233745862094426.png',
                         title='COCO',
-                        text='第一個轉盤樣板',
+                        text='',
                         actions=[
                             MessageTemplateAction(
                                 label='菜單',
-                                text='我們有賣飲料'
+                                text='我要看COCO菜單'
                             ),
                             URITemplateAction(
                               label='我的網頁',
@@ -84,11 +84,11 @@ def sendCarousel(event):  #轉盤樣板
                     CarouselColumn(
                          thumbnail_image_url='https://meet.eslite.com/Content/Images/Brand/2-LOGO_20181221110420.png',
                         title='迷克夏',
-                        text='第一個轉盤樣板',
+                        text='',
                         actions=[
                             MessageTemplateAction(
                                 label='菜單',
-                                text='我們有賣披薩'
+                                text='我要看迷克夏菜單'
                             ),
                             URITemplateAction(
                                label='我的網頁',
@@ -99,11 +99,11 @@ def sendCarousel(event):  #轉盤樣板
                     CarouselColumn(
                         thumbnail_image_url='https://www.chingshin.tw/upload/image/%E6%B8%85%E5%BF%83.png',
                         title='清新福全',
-                        text='第一個轉盤樣板',
+                        text='',
                         actions=[
                             MessageTemplateAction(
                                 label='菜單',
-                                text='我們有賣披薩'
+                                text='我要看清新福全菜單'
                             ),
                             URITemplateAction(
                                label='我的網頁',
@@ -114,11 +114,11 @@ def sendCarousel(event):  #轉盤樣板
                     CarouselColumn(
                         thumbnail_image_url='https://twcoupon.com/images/logo/p_freshnature.png',
                         title='先自然',
-                        text='第一個轉盤樣板',
+                        text='',
                         actions=[
                             MessageTemplateAction(
                                 label='菜單',
-                                text='我們有賣披薩'
+                                text='我要看先自然全菜單'
                             ),
                             URITemplateAction(
                                label='我的網頁',
@@ -132,19 +132,6 @@ def sendCarousel(event):  #轉盤樣板
         line_bot_api.reply_message(event.reply_token,message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
-
-def PostbackTemplateAction(event):
-    print("Postback event received:", event)  # 添加日志查看事件
-    postback_data = event.postback.data
-    if postback_data == 'action=view_menu':
-        line_bot_api.reply_message(
-            event.reply_token,
-            ImageSendMessage(
-                original_content_url='https://starslifestyle.com.tw/wp-content/uploads/20200607191949_51.jpg',
-                preview_image_url='https://starslifestyle.com.tw/wp-content/uploads/20200607191949_51.jpg'
-            )
-        )
-        print('圖片消息已發送')
 
 def sendImgCarousel(event):  #圖片轉盤
     try:
