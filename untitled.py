@@ -132,19 +132,36 @@ def sendCarousel(event):  #轉盤樣板
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
+
+
+import random
+import threading
+import time
+
+# 初始的 texts 列表
 texts1 = ['必勝客', '拿波里', '肯德基', '麥當勞', 'ABV 美式餐酒館', 'AK12美式小館', 'H&W Restaurant and Bar', '發福廚房', '金色三麥', 'the Chips', '樂子 the Diner', 'Campus cafe', 'Housebistro好適廚坊']
 texts2 = ['頤宮', '興蓬萊台菜餐廳', '國賓中餐廳', '朧粵 Longyue', '捌伍添第 85TD', '喜來登', '私廚‧小酒棧', 'THE上海', '天香樓Tien Hsiang Lo', '今大滷肉飯', '吉甜不辣', '鑫鱻熱炒', '阿城鵝肉', '丰禾台式小館']
 texts3 = ['偷飯賊', 'GG季吉韓國美食餐飲房', 'WAYO 哇優', '東輝韓食館', '米食 미식', '韓食堂한식당', '大發韓式特色料理', 'Tigerroar 韓虎嘯', '小飯館兒', '林家匠韓國部隊鍋', '首爾飯桌 - 서울밥상', 'NiL Kitchen 尼歐廚房', 'K bab 大叔的飯卷', '米花停', '朝鮮味', '韓華園']
 texts4 = ['瓦城', '1010湘', '大心', '泰鑽泰式料理', '哈哈囉55泰式船面', 'Lisa泰式美食', 'Kanokwan 老麵攤', '泰街頭', '三攀泰泰國料理', '泰鼎泰式料理']
 texts5 = ['欣葉日本料理', 'NAGOMI', '彩日本料理', '金子半之助 ', '九州鬆餅', '日本橋海鮮丼つじ半', '丼飯店', '心 KOKORO 食堂', '大和日本料理', '三井料理美術館']
 
-random_text1 = random.choice(texts1)
-random_text2 = random.choice(texts2)
-random_text3 = random.choice(texts3)
-random_text4 = random.choice(texts4)
-random_text5 = random.choice(texts5)
+# 初始的 random_text1 值
+random_text1 = random.choice(texts[0])
 
-def sendImgCarousel(event):  #圖片轉盤
+def update_random_text1():
+    global random_text1
+    while True:
+        # 每五秒更新一次 random_text1 的值
+        time.sleep(5)
+        random_text1 = random.choice(texts[0])
+        print("random_text1 已更新为：", random_text1)
+
+# 创建一个线程来更新 random_text1 的值
+update_thread = threading.Thread(target=update_random_text1)
+update_thread.daemon = True
+update_thread.start()
+
+def sendImgCarousel(event):  # 图片轮播
     try:
         message = TemplateSendMessage(
             alt_text='圖片轉盤樣板',
@@ -154,43 +171,47 @@ def sendImgCarousel(event):  #圖片轉盤
                         image_url='https://i.imgur.com/bUL1Bml.png',
                         action=MessageTemplateAction(
                             label='美式',
-                            text= random_text1
+                            text=random_text1
                         )
                     ),
                     ImageCarouselColumn(
                         image_url='https://i.imgur.com/3KaJYqm.png',
                         action=MessageTemplateAction(
                             label='中式',
-                            text= random_text2
+                            text='美式'
                         )
                     ),
                     ImageCarouselColumn(
                         image_url='https://i.imgur.com/ZJ6yBHw.png',
                         action=MessageTemplateAction(
                             label='韓式',
-                            text= random_text3
+                            text='美式'
                         )
                     ),
-                     ImageCarouselColumn(
+                    ImageCarouselColumn(
                         image_url='https://i.imgur.com/6G2QAPY.png',
                         action=MessageTemplateAction(
                             label='泰式',
-                            text= random_text4
+                            text='美式'
                         )
                     ),
-                     ImageCarouselColumn(
+                    ImageCarouselColumn(
                         image_url='https://i.imgur.com/H9Ox0HI.png',
                         action=MessageTemplateAction(
                             label='日式',
-                            text= random_text5
+                            text='美式'
                         )
                     )
                 ]
             )
         )
-        line_bot_api.reply_message(event.reply_token,message)
+        line_bot_api.reply_message(event.reply_token, message)
     except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
+        line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
+
+# 使用 sendImgCarousel 函数发送消息
+sendImgCarousel(event)
+
 
 
 
