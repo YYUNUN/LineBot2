@@ -52,13 +52,13 @@ def sendCarousel(event):  #轉盤樣板
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
+                       thumbnail_image_url='https://tcpass-static.taichung.gov.tw/storeFile/33558/33558_imageCover.png',
                         title='五桐號',
                         text='第一個轉盤樣板',
                         actions=[
                             URITemplateAction(
-                                label='連結文淵閣網頁',
-                                uri='http://www.e-happy.com.tw'
+                                label='我的網頁',
+                                uri='https://www.wootea.com/'
                             ),
                             PostbackTemplateAction(
                                 label='查看菜單',
@@ -67,7 +67,7 @@ def sendCarousel(event):  #轉盤樣板
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://i.imgur.com/qaAdBkR.png',
+                        thumbnail_image_url='https://photo.518.com.tw/photo/2/77/3152921/1689233745862094426.png',
                         title='COCO',
                         text='第一個轉盤樣板',
                         actions=[
@@ -76,13 +76,13 @@ def sendCarousel(event):  #轉盤樣板
                                 text='我們有賣飲料'
                             ),
                             URITemplateAction(
-                                label='連結台大網頁',
-                                uri='http://www.ntu.edu.tw'
+                              label='我的網頁',
+                              uri='https://www.facebook.com/cocofreshtea.tw/?locale=zh_TW'
                             )
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
+                         thumbnail_image_url='https://meet.eslite.com/Content/Images/Brand/2-LOGO_20181221110420.png',
                         title='迷克夏',
                         text='第一個轉盤樣板',
                         actions=[
@@ -91,13 +91,13 @@ def sendCarousel(event):  #轉盤樣板
                                 text='我們有賣披薩'
                             ),
                             URITemplateAction(
-                                label='連結文淵閣網頁',
-                                uri='http://www.e-happy.com.tw'
+                               label='我的網頁',
+                               uri='https://milksha.com/'
                             )
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
+                        thumbnail_image_url='https://www.chingshin.tw/upload/image/%E6%B8%85%E5%BF%83.png',
                         title='清新福全',
                         text='第一個轉盤樣板',
                         actions=[
@@ -106,13 +106,13 @@ def sendCarousel(event):  #轉盤樣板
                                 text='我們有賣披薩'
                             ),
                             URITemplateAction(
-                                label='連結文淵閣網頁',
-                                uri='http://www.e-happy.com.tw'
+                               label='我的網頁',
+                               uri='https://www.chingshin.tw/'
                             )
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
+                        thumbnail_image_url='https://twcoupon.com/images/logo/p_freshnature.png',
                         title='先自然',
                         text='第一個轉盤樣板',
                         actions=[
@@ -121,8 +121,8 @@ def sendCarousel(event):  #轉盤樣板
                                 text='我們有賣披薩'
                             ),
                             URITemplateAction(
-                                label='連結文淵閣網頁',
-                                uri='http://www.e-happy.com.tw'
+                               label='我的網頁',
+                               uri='https://freshnature.tw/'
                             )
                         ]
                     )
