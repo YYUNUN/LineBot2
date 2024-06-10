@@ -52,6 +52,7 @@ def sendCarousel(event):  #轉盤樣板
                     CarouselColumn(
                         thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
                         title='五桐號',
+                        text='第一個轉盤樣板',
                         actions=[
                             MessageTemplateAction(
                                 label='菜單',
@@ -66,6 +67,7 @@ def sendCarousel(event):  #轉盤樣板
                     CarouselColumn(
                         thumbnail_image_url='https://i.imgur.com/qaAdBkR.png',
                         title='COCO',
+                        text='第一個轉盤樣板',
                         actions=[
                             MessageTemplateAction(
                                 label='菜單',
@@ -80,6 +82,7 @@ def sendCarousel(event):  #轉盤樣板
                     CarouselColumn(
                         thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
                         title='迷克夏',
+                        text='第一個轉盤樣板',
                         actions=[
                             MessageTemplateAction(
                                 label='菜單',
@@ -94,6 +97,7 @@ def sendCarousel(event):  #轉盤樣板
                     CarouselColumn(
                         thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
                         title='清新福全',
+                        text='第一個轉盤樣板',
                         actions=[
                             MessageTemplateAction(
                                 label='菜單',
@@ -108,6 +112,7 @@ def sendCarousel(event):  #轉盤樣板
                     CarouselColumn(
                         thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
                         title='先自然',
+                        text='第一個轉盤樣板',
                         actions=[
                             MessageTemplateAction(
                                 label='菜單',
