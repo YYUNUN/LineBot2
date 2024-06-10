@@ -36,7 +36,7 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     mtext = event.message.text
-    if mtext == '@轉盤樣板':
+    if mtext == '@今天要喝啥':
         sendCarousel(event)
 
     elif mtext == '@圖片轉盤':
@@ -54,7 +54,7 @@ def sendCarousel(event):  #轉盤樣板
                     CarouselColumn(
                        thumbnail_image_url='https://tcpass-static.taichung.gov.tw/storeFile/33558/33558_imageCover.png',
                         title='五桐號',
-                        text='',
+                        text='茶飲專賣',
                        actions=[
                             MessageTemplateAction(
                                 label='菜單',
@@ -69,7 +69,7 @@ def sendCarousel(event):  #轉盤樣板
                     CarouselColumn(
                         thumbnail_image_url='https://photo.518.com.tw/photo/2/77/3152921/1689233745862094426.png',
                         title='COCO',
-                        text='',
+                        text='知名手搖',
                         actions=[
                             MessageTemplateAction(
                                 label='菜單',
@@ -84,7 +84,7 @@ def sendCarousel(event):  #轉盤樣板
                     CarouselColumn(
                          thumbnail_image_url='https://meet.eslite.com/Content/Images/Brand/2-LOGO_20181221110420.png',
                         title='迷克夏',
-                        text='',
+                        text='鮮奶是我的專長',
                         actions=[
                             MessageTemplateAction(
                                 label='菜單',
@@ -99,7 +99,7 @@ def sendCarousel(event):  #轉盤樣板
                     CarouselColumn(
                         thumbnail_image_url='https://www.chingshin.tw/upload/image/%E6%B8%85%E5%BF%83.png',
                         title='清新福全',
-                        text='',
+                        text='隨處可見',
                         actions=[
                             MessageTemplateAction(
                                 label='菜單',
@@ -114,7 +114,7 @@ def sendCarousel(event):  #轉盤樣板
                     CarouselColumn(
                         thumbnail_image_url='https://twcoupon.com/images/logo/p_freshnature.png',
                         title='先自然',
-                        text='',
+                        text='我就講求自然',
                         actions=[
                             MessageTemplateAction(
                                 label='菜單',
