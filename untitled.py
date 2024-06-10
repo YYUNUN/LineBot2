@@ -154,35 +154,35 @@ def sendImgCarousel(event):  #圖片轉盤
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
                             label='美式',
-                            text=random_text1
+                            text='美式'
                         )
                     ),
                     ImageCarouselColumn(
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
                             label='中式',
-                            text=random_text2
+                            text='美式'
                         )
                     ),
                     ImageCarouselColumn(
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
                             label='韓式',
-                            text=random_text3
+                            text='美式'
                         )
                     ),
                      ImageCarouselColumn(
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
                             label='泰式',
-                            text=random_text4
+                            text='美式'
                         )
                     ),
                      ImageCarouselColumn(
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
                             label='日式',
-                            text=random_text5
+                            text='美式'
                         )
                     )
                 ]
