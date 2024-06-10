@@ -63,20 +63,6 @@ def sendCarousel(event):  #轉盤樣板
                                 uri='http://www.e-happy.com.tw'
                             )
                         ]
-                    ),
-                    CarouselColumn(
-                        thumbnail_image_url='https://tcpass-static.taichung.gov.tw/storeFile/33558/33558_imageCover.png',
-                        title='五桐號',
-                        actions=[
-                            MessageTemplateAction(
-                                label='菜單',
-                                image_url = 'https://cdn.myfeel-tw.com/media/eA10hHiJL1prr2wRikZB2AM5vbANhsauz4dK7XCH.jpg' 
-                            ),
-                            URITemplateAction(
-                                label='我的網頁',
-                                uri='https://www.wootea.com/'
-                            )
-                        ]
                     )
                 ]
             )
