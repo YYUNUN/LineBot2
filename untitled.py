@@ -56,7 +56,7 @@ def sendCarousel(event):  #轉盤樣板
                         actions=[
                             MessageTemplateAction(
                                 label='菜單',
-                                text='我們有賣披薩'
+                                image_url = 'https://cdn.myfeel-tw.com/media/eA10hHiJL1prr2wRikZB2AM5vbANhsauz4dK7XCH.jpg'
                             ),
                             URITemplateAction(
                                 label='連結文淵閣網頁',
