@@ -172,7 +172,7 @@ def sendImgCarousel(event):  #圖片轉盤
                         )
                     ),
                      ImageCarouselColumn(
-                        image_url='hhttps://i.imgur.com/6G2QAPY.png',
+                        image_url='https://i.imgur.com/6G2QAPY.png',
                         action=MessageTemplateAction(
                             label='泰式',
                             text= random_text4
