@@ -34,48 +34,85 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     mtext = event.message.text
-    if mtext == '@轉盤樣板':
+    if mtext == '@今天喝什麼':
         sendCarousel(event)
 
-    elif mtext == '@圖片轉盤':
+    elif mtext == '@今天吃什麼':
         sendImgCarousel(event)
     
-    elif mtext == '@星巴克位置':
-        sendLocation(event)
-
-def sendCarousel(event):  #轉盤樣板
+def sendCarousel(event):  #轉盤樣板 喝
     try:
         message = TemplateSendMessage(
             alt_text='轉盤樣板',
             template=CarouselTemplate(
                 columns=[
                     CarouselColumn(
-                        thumbnail_image_url='https://i.imgur.com/4QfKuz1.png',
-                        title='這是樣板一',
-                        text='第一個轉盤樣板',
+                        thumbnail_image_url='https://tcpass-static.taichung.gov.tw/storeFile/33558/33558_imageCover.png',
+                        title='五桐號',
                         actions=[
                             MessageTemplateAction(
-                                label='文字訊息一',
-                                text='我們有賣披薩'
+                                label='菜單',
+                                image_url = 'https://cdn.myfeel-tw.com/media/eA10hHiJL1prr2wRikZB2AM5vbANhsauz4dK7XCH.jpg' 
                             ),
                             URITemplateAction(
-                                label='連結文淵閣網頁',
-                                uri='http://www.e-happy.com.tw'
+                                label='我的網頁',
+                                uri='https://www.wootea.com/'
                             )
                         ]
                     ),
                     CarouselColumn(
-                        thumbnail_image_url='https://i.imgur.com/qaAdBkR.png',
-                        title='這是樣板二',
-                        text='第二個轉盤樣板',
+                        thumbnail_image_url='https://photo.518.com.tw/photo/2/77/3152921/1689233745862094426.png',
+                        title='COCO',
                         actions=[
                             MessageTemplateAction(
-                                label='文字訊息二',
-                                text='我們有賣飲料'
+                                label='菜單',
+                                image_url = 'https://i0.wp.com/timmyblog.cc/wp-content/uploads/20220208180215_89.jpg' 
                             ),
                             URITemplateAction(
-                                label='連結台大網頁',
-                                uri='http://www.ntu.edu.tw'
+                                label='我的網頁',
+                                uri='https://www.facebook.com/cocofreshtea.tw/?locale=zh_TW'
+                            )
+                        ]
+                    ),
+                     CarouselColumn(
+                        thumbnail_image_url='https://meet.eslite.com/Content/Images/Brand/2-LOGO_20181221110420.png',
+                        title='迷克夏',
+                        actions=[
+                            MessageTemplateAction(
+                                label='菜單',
+                                image_url = 'https://static.popdaily.com.tw/u/202305/e4127f8b-d05d-406e-8071-d26351a3ebf2.png' 
+                            ),
+                            URITemplateAction(
+                                label='我的網頁',
+                                uri='https://milksha.com/'
+                            )
+                        ]
+                    ),
+                     CarouselColumn(
+                        thumbnail_image_url='https://www.chingshin.tw/upload/image/%E6%B8%85%E5%BF%83.png',
+                        title='清新福全',
+                        actions=[
+                            MessageTemplateAction(
+                                label='菜單',
+                                image_url = 'https://img.findcoupon.tw/fit/0x0/menu/1000/1112_1.jpg' 
+                            ),
+                            URITemplateAction(
+                                label='我的網頁',
+                                uri='https://www.chingshin.tw/'
+                            )
+                        ]
+                    ),
+                     CarouselColumn(
+                        thumbnail_image_url='https://twcoupon.com/images/logo/p_freshnature.png',
+                        title='先自然',
+                        actions=[
+                            MessageTemplateAction(
+                                label='菜單',
+                                image_url = 'https://freshnature.tw/wp-content/uploads/2017/09/menu-01.jpg' 
+                            ),
+                            URITemplateAction(
+                                label='我的網頁',
+                                uri='https://freshnature.tw/'
                             )
                         ]
                     )
@@ -86,7 +123,7 @@ def sendCarousel(event):  #轉盤樣板
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
-def sendImgCarousel(event):  #圖片轉盤
+def sendImgCarousel(event):  #圖片轉盤 吃
     try:
         message = TemplateSendMessage(
             alt_text='圖片轉盤樣板',
@@ -117,18 +154,6 @@ def sendImgCarousel(event):  #圖片轉盤
             )
         )
         line_bot_api.reply_message(event.reply_token,message)
-    except:
-        line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
-
-def sendLocation(event):
-    try:
-        message = LocationSendMessage(
-            title='星巴克 景美門市', 
-            address='116台北市文山區景興路185號1-2F', 
-            latitude=24.99301856466003,
-            longitude=121.54439425767183
-        )
-        line_bot_api.reply_message(event.reply_token, message)
     except:
         line_bot_api.reply_message(event.reply_token,TextSendMessage(text='發生錯誤！'))
 
