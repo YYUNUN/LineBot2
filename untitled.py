@@ -145,6 +145,7 @@ random_text2 = random.choice(texts5)
 
 def sendImgCarousel(event):  #圖片轉盤
     try:
+        a=random.choice(texts1)
         message = TemplateSendMessage(
             alt_text='圖片轉盤樣板',
             template=ImageCarouselTemplate(
@@ -153,7 +154,7 @@ def sendImgCarousel(event):  #圖片轉盤
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
                             label='美式',
-                            text=random.choice(texts1)
+                            text=a
                         )
                     ),
                     ImageCarouselColumn(
@@ -167,21 +168,21 @@ def sendImgCarousel(event):  #圖片轉盤
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
                             label='韓式',
-                            text='韓式'
+                            text=random.choice(texts3)
                         )
                     ),
                      ImageCarouselColumn(
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
                             label='泰式',
-                            text='韓式'
+                            text=random.choice(texts4)
                         )
                     ),
                      ImageCarouselColumn(
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
                             label='日式',
-                            text='韓式'
+                            text=random.choice(texts5)
                         )
                     )
                 ]
