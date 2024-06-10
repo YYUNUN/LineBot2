@@ -143,7 +143,7 @@ random_text1 = random.choice(texts3)
 random_text2 = random.choice(texts4)
 random_text2 = random.choice(texts5)
 
-def sendImgCarousel(event, random_text1, random_text2, random_text3, random_text4, random_text5):  #圖片轉盤
+def sendImgCarousel(event):  #圖片轉盤
     try:
         message = TemplateSendMessage(
             alt_text='圖片轉盤樣板',
@@ -153,35 +153,35 @@ def sendImgCarousel(event, random_text1, random_text2, random_text3, random_text
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
                             label='美式',
-                            text=random_text1
+                            text=random.choice(texts1)
                         )
                     ),
                     ImageCarouselColumn(
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
                             label='中式',
-                            text=random_text2
+                            text=random.choice(texts2)
                         )
                     ),
                     ImageCarouselColumn(
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
                             label='韓式',
-                            text=random_text3
+                            text='韓式'
                         )
                     ),
                      ImageCarouselColumn(
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
                             label='泰式',
-                            text=random_text4
+                            text='韓式'
                         )
                     ),
                      ImageCarouselColumn(
                         image_url='https://i.imgur.com/4QfKuz1.png',
                         action=MessageTemplateAction(
                             label='日式',
-                            text=random_text5
+                            text='韓式'
                         )
                     )
                 ]
