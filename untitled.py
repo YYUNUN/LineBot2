@@ -211,8 +211,6 @@ def sendImgCarousel(event):  # 图片轮播
     except:
         line_bot_api.reply_message(event.reply_token, TextSendMessage(text='發生錯誤！'))
 
-# 使用 sendImgCarousel 函数发送消息
-sendImgCarousel(event)
 
 
 
